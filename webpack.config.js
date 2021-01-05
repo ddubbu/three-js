@@ -1,9 +1,10 @@
 const path = require('path');
 
+const file_name = 'drawing_lines.js'
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/' + file_name,
   output: {
-    filename: 'main.js',
+    filename: 'main_' + file_name,
     path: path.resolve(__dirname, 'dist'),
   },
 };

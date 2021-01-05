@@ -30,9 +30,13 @@ webpack.js.org/guides/getting-started/
 
 그래서 한글 설명
 https://velog.io/@decody/Webpack-설정
+https://jeonghwan-kim.github.io/js/2017/05/15/webpack.html
 
 세팅 완료 후
 ```
 npx webpack --config webpack.config.js
 ```
 그리고 live server로 index.html 확인하기
+
+## webpack 원리
+번들링된 파일을 만들면, html이 live server를 통해 구동할 뿐이구나!

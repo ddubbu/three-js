@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import * as THREE from 'three';
 
+console.log("open");
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
