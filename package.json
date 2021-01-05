@@ -2,19 +2,32 @@
   "name": "enjoy",
   "version": "1.0.0",
   "description": "",
+<<<<<<< HEAD
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
+=======
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 start app.js",  
+    "stop": "pm2 stop app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> a15d783... Three.js 환경 세팅
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+<<<<<<< HEAD
     "lodash": "^4.17.20",
     "pm2": "^4.5.1",
     "three": "^0.124.0",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.1"
+=======
+    "pm2": "^4.5.1",
+    "three": "^0.124.0"
+>>>>>>> a15d783... Three.js 환경 세팅
   }
 }
