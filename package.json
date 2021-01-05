@@ -2,17 +2,19 @@
   "name": "enjoy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "pm2 start app.js",  
-    "stop": "pm2 stop app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "lodash": "^4.17.20",
     "pm2": "^4.5.1",
-    "three": "^0.124.0"
+    "three": "^0.124.0",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
   }
 }
