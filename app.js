@@ -39,8 +39,8 @@ class App {
     // console.log(this.stageWidth, this.stageHeight); // 700, 460
 
     /* CSS 말고 tag 속성을 바꾸면 drawing area를 바꾸는 거임*/
-    this.canvas.width = this.stageWidth  // 840
-    this.canvas.height = this.stageHeight  //413
+    this.canvas.width = this.stageWidth // 840
+    this.canvas.height = this.stageHeight //413
     // this.ctx.scale(2, 2); => 이걸 도대체 왜 한거지?
 
     this.waveGroup.resize(this.stageWidth, this.stageHeight);

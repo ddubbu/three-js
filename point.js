@@ -5,7 +5,7 @@ export class Point { // points for wave
     this.fixedY = y;
     this.speed = 0.1
     this.cur = index //0;
-    this.max = Math.random() * 100; //+ 150;
+    this.max = Math.random() * 100 + 150;
   }
 
   update(){ 

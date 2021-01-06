@@ -2,17 +2,17 @@ import { Wave } from './wave.js';
 
 export class WaveGroup {
   constructor(){
-    this.totalWaves = 1;
-    this.totalPoints = 6;
+    this.totalWaves = 3;
+    this.totalPoints = [6, 11, 12];
 
-    this.color = ['rgba(0, 199, 235, 0.4)', 'rgba(0,146, 199, 0.4)', 'rgba(0, 87, 158, 0.4)'];
+    this.color = ['rgba(204, 255, 221, 0.4)', 'rgba(255, 128, 170, 0.4)', 'rgba(153, 204, 255, 0.4)'];
 
     this.waves = [];
 
     for(let i=0; i < this.totalWaves; i++){
       const wave = new Wave(
-          i, 
-          this.totalPoints, 
+          i, // i번째 wave 
+          this.totalPoints[i], // 주기를 나타냄.
           this.color[i]
       );
       this.waves[i] = wave;

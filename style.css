@@ -26,9 +26,10 @@ canvas {
   margin: auto;
   /*canvas element size*/
   /*drawing area 비례적으로 존재함.*/
-  width: 90%;
-  height: 90%;
-  border: 1px solid red
+  width: 500px;
+  height: 500px;
+  border: 5px solid rgb(160, 159, 159);
+  border-radius: 50%;
 }
 
 span.vertex {

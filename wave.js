@@ -27,7 +27,7 @@ export class Wave {
     // N개의 point 생성
     for(let i=0 ; i < this.totalPoints; i++){
       const point = new Point(
-          this.index + i, // parent wave idx
+          this.index + i, // this.index = parent wave idx
           this.pointGap * i,//this.centerX,
           this.centerY
       ); 
