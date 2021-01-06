@@ -23,7 +23,7 @@ $ npm start
 - node_modues/three/build 내부의 파일을 import 하기 위해 `/build` URI 생성
 
 -----
-## 환경 설정 with webpack
+## ✌️ 환경 설정 with webpack
 
 공식 문서 따라하면 되긴하는데 이해가 안돼
 webpack.js.org/guides/getting-started/
@@ -38,5 +38,15 @@ npx webpack --config webpack.config.js
 ```
 그리고 live server로 index.html 확인하기
 
-## webpack 원리
-번들링된 파일을 만들면, html이 live server를 통해 구동할 뿐이구나!
+### 1. webpack 원리
+번들링된 파일 script로 넣고, html이 live server를 통해 구동할 뿐이구나!
+
+### 2. 변경사항 감지하는 방법 (watch option)
+아래 키워드로 실행 후 webpack이 감지하고 있을 때만 가능!
+
+```
+// package.json 파일 script 부분에 
+"build" : "webpack --watch"
+
+// 혹은 webpack.config.js 파일에
+"watch" : true
