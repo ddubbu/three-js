@@ -1,13 +1,29 @@
+/* 기본 build */
 import * as THREE from 'three';
-
-//! To display somthing, we need 3 things: scene, camera and renderer.
-// so that we can render the scene with camera.
-
+console.log("hello")
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-//* Camera : PerspectiveCamera among 2 types
-// args = [filed of view, aspect ratio, near, far]
+scene.background = new THREE.Color( 0xffffff ); // 배경색 설정
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 500);
+camera.position.set(0, 0, 100);
+camera.lookAt(0, 0, 0);
 
 const renderer = new THREE.WebGL1Renderer(); // displays on page
-renderer.setSize(window.innerWidth, window.innerHeight); // viewport 인 듯
-document.body.appendChild(renderer.domElement); // Add a canvas
+renderer.setSize(window.innerWidth, window.innerHeight); 
+document.body.appendChild(renderer.domElement); // Add a <canvas/> to DOM
+/* 기본 build */
+
+const points = []; // 점 순서대로 그려지네. 
+//* with 4 points Make closed triangle.
+points.push( new THREE.Vector3( -10, 0, 0 ) );
+points.push( new THREE.Vector3( 0, 10, 0 ) );
+points.push( new THREE.Vector3( 10, 0, 0 ) );
+points.push( new THREE.Vector3( -10, 0, 0 ) );
+
+//! what is different between Mesh~ vs Line~ method
+const geometry = new THREE.BufferGeometry().setFromPoints( points );
+const material = new THREE.LineBasicMaterial({color:0x0000ff});
+const line = new THREE.Line(geometry, material);
+scene.add(line);
+
+
+renderer.render( scene, camera ); 
