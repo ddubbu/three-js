@@ -1,40 +1,29 @@
+/* 기본 build */
 import * as THREE from '/build/three.module.js';
 
-//! To display somthing, we need 3 things: scene, camera and renderer.
-// so that we can render the scene with camera.
-
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-//* Camera : PerspectiveCamera among 2 types
-// args = [filed of view, aspect ratio, near, far]
-// near, far 에 따라 시야에 보여지고 안보여지고
+scene.background = new THREE.Color( 0xffffff ); // 배경색 설정
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 500);
+camera.position.set(0, 0, 100);
+camera.lookAt(0, 0, 0);
 
 const renderer = new THREE.WebGL1Renderer(); // displays on page
 renderer.setSize(window.innerWidth, window.innerHeight); 
-//* viewport와 함께
-// 3번째 인자는 resolution과 관련
 document.body.appendChild(renderer.domElement); // Add a <canvas/> to DOM
+/* 기본 build */
 
-const geometry = new THREE.BoxGeometry(); // create cube
-const material = new THREE.MeshBasicMaterial({color:0x00ff00}); // coloring
-const cube = new THREE.Mesh(geometry, material);// with Mesh
-scene.add(cube);
-camera.position.z = 5; // default coordinate is (0,0,0)
-// camera.position.x = 2;
-// camera.position.y = 2;
+const points = []; // 점 순서대로 그려지네. 
+//* with 4 points Make closed triangle.
+points.push( new THREE.Vector3( -10, 0, 0 ) );
+points.push( new THREE.Vector3( 0, 10, 0 ) );
+points.push( new THREE.Vector3( 10, 0, 0 ) );
+points.push( new THREE.Vector3( -10, 0, 0 ) );
 
-//! How to display the element?
-// render, animate loop
-// typical screen is refreshed 60 times per second
-renderer.render( scene, camera ); // render를 통해 element를 띄움.
+//! what is different between Mesh~ vs Line~ method
+const geometry = new THREE.BufferGeometry().setFromPoints( points );
+const material = new THREE.LineBasicMaterial({color:0x0000ff});
+const line = new THREE.Line(geometry, material);
+scene.add(line);
 
-const animate = function () { 
-  requestAnimationFrame( animate ); // 자체 호출하네
 
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
-
-  renderer.render( scene, camera );
-};
-
-animate();
+renderer.render( scene, camera ); 

@@ -19,3 +19,11 @@ $ npm start
 - express 모듈을 이용해 서버 구동
 - root path(`http://127.0.0.1:3000/`) 에서 정적 파일 public/*.html 렌더링
 - node_modues/three/build 내부의 파일을 import 하기 위해 `/build` URI 생성
+
+
+## To do
+document
+https://threejs.org/docs/index.html#manual/en/introduction/How-to-update-things
+
+응용 코드
+https://jj-k-ul.tistory.com/entry/Threejs%EB%A5%BC-%EC%8B%9C%EC%9E%91%ED%95%B4%EB%B3%B4%EC%9E%90
