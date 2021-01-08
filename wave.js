@@ -3,7 +3,7 @@ import { Point } from "./point.js"; // js 확장자 필수.
 
 export class Wave {
   constructor(index, totalPoints, color){
-    console.log("wave")
+    //console.log("wave")
     this.index = index;
     this.totalPoints = totalPoints; // num
     this.color = color;
@@ -19,7 +19,7 @@ export class Wave {
     this.pointGap = this.stageWidth / (this.totalPoints - 1);
 
     this.init();
-    console.log("init")
+    //console.log("init")
   }
 
   init(){
@@ -31,7 +31,7 @@ export class Wave {
           this.pointGap * i,//this.centerX,
           this.centerY
       ); 
-      console.log("point")
+      //console.log("point")
       this.points[i] = point;
       //this.points.push(point);
     }
@@ -56,7 +56,7 @@ export class Wave {
     ctx.moveTo(prevX, prevY);
 
     for(let i=1; i<this.totalPoints; i++){
-      // console.log(i)
+      // //console.log(i)
       if(i < this.totalPoints -1){
         // ctx.arc(this.points[i].x, this.points[i].y, 10, 0, 2*Math.PI);
         this.points[i].update();

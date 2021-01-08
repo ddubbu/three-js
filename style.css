@@ -32,6 +32,15 @@ canvas {
   border-radius: 50%;
 }
 
+@media (max-width: 500px){
+  canvas { 
+    width: 250px;
+    height: 250px;
+    border: 2px solid rgb(160, 159, 159);
+  }
+}
+
+
 span.vertex {
   position: absolute;
 
